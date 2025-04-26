@@ -30,7 +30,7 @@ const Dashboard = () => {
   return (
     <section className={styles.root}>
       <div className={styles.title}>
-        <Typography as="h1" variant="title1" weigh="semibold" color="primary">
+        <Typography as="h1" variant="title1" weight="semibold" color="primary">
           Applications
         </Typography>
         <Button

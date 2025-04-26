@@ -76,7 +76,7 @@ const Create = () => {
           <fieldset disabled={isLoading} className={styles.fieldset}>
             <Typography
               variant="title2"
-              weigh="semibold"
+              weight="semibold"
               color={hasFormTitle ? "primary" : "hint"}
               className={styles.formTitle}
             >

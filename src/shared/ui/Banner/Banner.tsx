@@ -12,7 +12,7 @@ const Banner = ({ title, description, action, bottom }: Props) => {
   return (
     <div className={styles.root}>
       <div className={styles.container}>
-        <Typography as="h1" variant="title2" weigh="semibold" color="primary">
+        <Typography as="h1" variant="title2" weight="semibold" color="primary">
           {title}
         </Typography>
         <Typography variant="text1" color="hint" align="center">

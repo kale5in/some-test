@@ -11,38 +11,37 @@ type TypographyColor =
   | "error"
   | "info"
   | "hint";
+
 type TypographyWeight = "regular" | "medium" | "semibold";
+type TypographyAlign = "start" | "center" | "end";
 
 type Props<T extends ElementType> = {
   as?: T;
   variant: TypographyVariant;
   color?: TypographyColor;
-  weigh?: TypographyWeight;
-  align?: "start" | "center" | "end";
-} & Omit<
-  React.ComponentPropsWithoutRef<T>,
-  "color" | "weigh" | "variant" | "as" | "align"
->;
+  weight?: TypographyWeight;
+  align?: TypographyAlign;
+};
 
 const Typography = <T extends ElementType = "span">({
   as,
   children,
   className,
   variant,
-  align,
+  align = "start",
   color,
-  weigh = "regular",
+  weight = "regular",
   ...props
-}: Props<T>): JSX.Element => {
+}: Props<T> & React.ComponentPropsWithoutRef<T>): JSX.Element => {
   const Component = as || "span";
   return (
     <Component
       className={classNames(
         styles.root,
-        variant && styles[variant],
+        styles[variant],
+        styles[weight],
+        styles[align],
         color && styles[color],
-        weigh && styles[weigh],
-        align && styles[align],
         className
       )}
       {...props}

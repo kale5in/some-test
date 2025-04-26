@@ -16,10 +16,7 @@ type ButtonProps<T extends ElementType = "button"> = {
   end?: React.ReactNode;
   children?: React.ReactNode;
   progress?: boolean;
-} & Omit<
-  React.ComponentPropsWithoutRef<T>,
-  "as" | "size" | "variant" | "start" | "end" | "progress"
->;
+};
 
 const TYPOGRAPHY_VARIANT_BY_SIZE: Record<ButtonSize, TypographyVariant> = {
   small: "text2" as TypographyVariant,
@@ -36,7 +33,7 @@ const Button = <T extends ElementType = "button">({
   className,
   progress = false,
   ...props
-}: ButtonProps<T>) => {
+}: ButtonProps<T> & React.ComponentPropsWithoutRef<T>) => {
   const Component = as || "button";
   return (
     <Component
