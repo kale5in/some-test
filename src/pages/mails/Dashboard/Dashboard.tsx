@@ -48,6 +48,7 @@ const Dashboard = () => {
         <div className={styles.container}>
           {mails.map((mail) => (
             <Card
+              key={mail.id}
               text={mail.text}
               actions={{
                 start: (
