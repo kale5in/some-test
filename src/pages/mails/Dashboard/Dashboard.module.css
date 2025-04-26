@@ -1,0 +1,36 @@
+.root {
+  container-type: inline-size;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  align-items: center;
+  border-bottom: 1px solid var(--color-ghost);
+}
+
+@container (max-width: 500px) {
+  .title {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .button {
+    width: 80%;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+  margin-top: 24px;
+}
+
+@container (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
