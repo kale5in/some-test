@@ -8,19 +8,20 @@ type Mail = {
 
 interface MailsSlice {
   mails: Mail[];
-  getMailsCount: () => number;
+  createdMailCount: number;
   addMail: (letter: Mail) => void;
   removeMail: (id: string) => void;
 }
 
-const createMailsSlice: StateCreator<MailsSlice> = (set, get) => ({
+const createMailsSlice: StateCreator<MailsSlice> = (set) => ({
   mails: [],
 
-  getMailsCount: () => get().mails.length,
+  createdMailCount: 0,
 
   addMail: (mail) =>
     set((state) => ({
       mails: [...state.mails, mail],
+      createdMailCount: state.createdMailCount + 1,
     })),
 
   removeMail: (id) =>

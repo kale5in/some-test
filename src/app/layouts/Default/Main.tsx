@@ -14,11 +14,11 @@ import PlusSvg from "@/shared/icons/plus.svg?react";
 import styles from "./Main.module.css";
 
 const Main = () => {
-  const totalMailsCount = useStore((state) => state.getMailsCount());
+  const createdMailCount = useStore((state) => state.createdMailCount);
 
   const currentMailsCount = useMemo(
-    () => Math.min(totalMailsCount, MAX_MAIL_CREATED_FOR_GOAL),
-    [totalMailsCount]
+    () => Math.min(createdMailCount, MAX_MAIL_CREATED_FOR_GOAL),
+    [createdMailCount]
   );
 
   const isShownBanner = currentMailsCount < MAX_MAIL_CREATED_FOR_GOAL;
