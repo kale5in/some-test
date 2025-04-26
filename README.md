@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# Job Application Email Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based project designed to generate personalized emails for job applications.
 
-Currently, two official plugins are available:
+[Demo](https://kale5in.github.io/some-test/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+- Clone the repository
+- Install dependencies:
+   ```bash
+   npm install
+   ```
+- Run the development server:
+   ```bash
+   npm run dev
+   ```
+   
+---
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Dashboard View**: Displays a list of generated emails with a motivational banner encouraging users to create at least five emails.
+- **Email Generation Form**: A dedicated form for generating new cover letters using AI-generated content.
+- **State Persistence**: Stores generated emails locally within the browser to ensure they are restored upon revisiting the application.
+- **Responsive Design**: Includes a mobile-friendly interface created independently.
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Project Structure by FSD
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This project follows a minimalistic interpretation of the Feature-Sliced Design (FSD) architecture, ensuring clear separation of concerns and scalability.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+```plaintext
+├── app/
+|   ├── styles
+|   ├── routes
+|   ├── .....
+|   # Application composition layer
+|   # Contains only abstract initialization logic
+|   # Does not include any slices
+|
+├── pages/
+|   # Slices implementing complete views for the application
+|   ├── mails
+|   |   ├── SomePage
+|
+├── entities/
+|   # Slices implementing business blocks in terms of application business logic
+|   ├── mails
+|
+├── shared/
+|   ├── ui
+|   ├── lib
+|   ├── some other shared modules
+|   # Abstract segments layer
+|   # No business blocks or business-related logic allowed here
