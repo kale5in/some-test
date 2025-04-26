@@ -1,0 +1,47 @@
+.root {
+  padding: 32px;
+}
+
+@media (max-width: 900px) {
+  .root {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .root {
+    padding: 16px;
+  }
+}
+
+.wrapper {
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+.header {
+  container-type: inline-size;
+  container-name: header;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  width: 100%;
+  margin-block-end: 24px;
+}
+
+.main {
+  margin-bottom: 48px;
+}
+
+.logoLink,
+.logo {
+  height: 100%;
+}
+
+.progress {
+  margin-inline-start: auto;
+}
+
+.homeButton {
+  margin-inline-start: 24px;
+}

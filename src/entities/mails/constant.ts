@@ -1,0 +1,3 @@
+const MAX_MAIL_CREATED_FOR_GOAL = 5;
+
+export { MAX_MAIL_CREATED_FOR_GOAL };
