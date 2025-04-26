@@ -1,15 +1,15 @@
 import { openaiApi } from "@/shared/api/openai";
 import { useStore } from "@/app/stores";
 import { useEffect, useState } from "react";
-import { generateMailMock } from "@/shared/api/openai/mocks";
+import { generateApplicationMock } from "@/shared/api/openai/mocks";
 import { Button, Card, Input, Textarea, Typography } from "@/shared/ui";
 import { useForm } from "react-hook-form";
 import RepeatSvg from "@/shared/icons/repeat.svg?react";
 import CopyImgPath from "@/shared/icons/copied.png";
 import CopySvg from "@/shared/icons/copy.svg?react";
-
-import styles from "./Create.module.css";
 import { copyToClipboard, showTemporaryImage } from "@/shared/lib";
+
+import styles from "./Generate.module.css";
 
 interface FormData {
   role: string;
@@ -18,11 +18,11 @@ interface FormData {
   details: string;
 }
 
-const Create = () => {
-  const [generatedMail, setGeneratedMail] = useState("");
+const Generate = () => {
+  const [createdApplication, setCreatedApplication] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const addMail = useStore((state) => state.addMail);
+  const addApplication = useStore((state) => state.addApplication);
 
   const {
     register,
@@ -44,23 +44,22 @@ const Create = () => {
     setIsLoading(true);
 
     try {
-      const response = await openaiApi.createMail(data);
-      const mailText = String(response);
-      setGeneratedMail(mailText);
-      addMail({ id: crypto.randomUUID(), text: mailText });
+      const response = await openaiApi.generateApplication(data);
+      const applicationText = String(response);
+      setCreatedApplication(applicationText);
+      addApplication({ id: crypto.randomUUID(), text: applicationText });
     } catch (error) {
       // Fallback to mock data if API fails
-      const mockMail = generateMailMock(data);
-      const mockMailText = String(mockMail);
-      setGeneratedMail(mockMailText);
-      addMail({ id: crypto.randomUUID(), text: mockMailText });
+      const mockApplication = generateApplicationMock(data);
+      setCreatedApplication(mockApplication);
+      addApplication({ id: crypto.randomUUID(), text: mockApplication });
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleCopyToClipboard = () => {
-    copyToClipboard(generatedMail).then(() => {
+    copyToClipboard(createdApplication).then(() => {
       showTemporaryImage(CopyImgPath);
     });
   };
@@ -122,23 +121,24 @@ const Create = () => {
 
             <Button
               size="medium"
-              variant={generatedMail ? "outlined" : "filled"}
+              variant={createdApplication ? "outlined" : "filled"}
               type="submit"
               disabled={!isValid}
               progress={isLoading}
-              start={generatedMail && <RepeatSvg />}
+              start={createdApplication && <RepeatSvg />}
             >
-              {generatedMail ? "Try Again" : "Generate Now"}
+              {createdApplication ? "Try Again" : "Generate Now"}
             </Button>
           </fieldset>
         </form>
+
         <Card
           text={
-            generatedMail ||
+            createdApplication ||
             "Your personalized job application will appear here..."
           }
           actions={{
-            end: generatedMail && (
+            end: createdApplication && (
               <Button
                 onClick={handleCopyToClipboard}
                 size="small"
@@ -157,4 +157,4 @@ const Create = () => {
   );
 };
 
-export { Create };
+export { Generate as GeneratePage };

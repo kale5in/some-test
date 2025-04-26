@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link, Outlet } from "react-router";
 import { useStore } from "@/app/stores";
 
-import { MAX_MAIL_CREATED_FOR_GOAL } from "@/entities/mails/constant";
+import { TOTAL_GENERATE_APPLICATIONS_FOR_GOAL } from "@/entities/applications/constant";
 import { RoutePaths } from "@/shared/configs/routesPath";
 
 import { Progress, Button, Banner } from "@/shared/ui";
@@ -14,14 +14,18 @@ import PlusSvg from "@/shared/icons/plus.svg?react";
 import styles from "./Main.module.css";
 
 const Main = () => {
-  const createdMailCount = useStore((state) => state.createdMailCount);
-
-  const currentMailsCount = useMemo(
-    () => Math.min(createdMailCount, MAX_MAIL_CREATED_FOR_GOAL),
-    [createdMailCount]
+  const createdApplicationsCount = useStore(
+    (state) => state.createdApplicationsCount
   );
 
-  const isShownBanner = currentMailsCount < MAX_MAIL_CREATED_FOR_GOAL;
+  const currentApplicationsCount = useMemo(
+    () =>
+      Math.min(createdApplicationsCount, TOTAL_GENERATE_APPLICATIONS_FOR_GOAL),
+    [createdApplicationsCount]
+  );
+
+  const isShownBanner =
+    currentApplicationsCount < TOTAL_GENERATE_APPLICATIONS_FOR_GOAL;
 
   return (
     <div className={styles.root}>
@@ -34,12 +38,12 @@ const Main = () => {
             className={styles.progress}
             label={
               <>
-                <span>{`${currentMailsCount}/5 `}</span>
+                <span>{`${currentApplicationsCount}/5 `}</span>
                 <span>applications generated</span>
               </>
             }
-            current={currentMailsCount}
-            total={MAX_MAIL_CREATED_FOR_GOAL}
+            current={currentApplicationsCount}
+            total={TOTAL_GENERATE_APPLICATIONS_FOR_GOAL}
           />
           <Button
             as={Link}
@@ -61,7 +65,7 @@ const Main = () => {
               action={
                 <Button
                   as={Link}
-                  to={RoutePaths.MAIL_CREATE}
+                  to={RoutePaths.APPLICATIONS_GENERATE}
                   variant="filled"
                   start={<PlusSvg />}
                 >
@@ -72,9 +76,9 @@ const Main = () => {
                 <Progress
                   indicator="line"
                   rootOrientation="vertical"
-                  label={`${currentMailsCount} out of 5`}
-                  current={currentMailsCount}
-                  total={MAX_MAIL_CREATED_FOR_GOAL}
+                  label={`${currentApplicationsCount} out of 5`}
+                  current={currentApplicationsCount}
+                  total={TOTAL_GENERATE_APPLICATIONS_FOR_GOAL}
                 />
               }
             />

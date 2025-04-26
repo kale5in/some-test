@@ -1,10 +1,10 @@
 import { create } from "zustand";
-import { createPersistedMailsSlice } from "@/entities/mails/slice";
+import { createPersistedApplicationsSlice } from "@/entities/applications/slice";
 
-type RootStore = ReturnType<typeof createPersistedMailsSlice>;
+type RootStore = ReturnType<typeof createPersistedApplicationsSlice>;
 
 const useStore = create<RootStore>()((...a) => ({
-  ...createPersistedMailsSlice(...a),
+  ...createPersistedApplicationsSlice(...a),
 }));
 
 export { useStore };

@@ -1,8 +1,8 @@
-type MailInputType = {
+type ApplicationInputType = {
   role: string;
   company: string;
   skills: string;
   details: string;
 };
 
-export type { MailInputType };
+export type { ApplicationInputType };

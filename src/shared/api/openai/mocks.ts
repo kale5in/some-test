@@ -1,6 +1,11 @@
-import { type MailInputType } from "./types";
+import { type ApplicationInputType } from "./types";
 
-const createMailMock = ({ role, skills, company, details }: MailInputType) => {
+const generateApplicationMock = ({
+  role,
+  skills,
+  company,
+  details,
+}: ApplicationInputType) => {
   return `Dear ${company} Team,
 
 I am writing to express my interest in the ${role} position.
@@ -14,4 +19,4 @@ I am confident that my skills and enthusiasm would translate into valuable contr
 Thank you for considering my application. I eagerly await the opportunity to discuss my qualifications further.`;
 };
 
-export { createMailMock as generateMailMock };
+export { generateApplicationMock };

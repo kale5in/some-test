@@ -1,69 +1,50 @@
 .root {
   margin: 0;
   padding: 0;
-
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-
-  --font-size-title-1: 48px;
-  --font-line-height-title-1: 60px;
-
-  --font-size-title-2: 36px;
-  --font-line-height-title-2: 44px;
-
-  --font-size-text-1: 18px;
-  --font-line-height-text-1: 28px;
-
-  --font-size-text-2: 16px;
-  --font-line-height-text-2: 24px;
-
-  --font-size-text-3: 14px;
-  --font-line-height-text-3: 20px;
 }
 
 /* Text size and family by type */
 .title1 {
   font-family: var(--font-family-title);
-  font-size: var(--font-size-title-1);
-  line-height: var(--font-line-height-title-1);
+  font-size: 48px;
+  line-height: 60px;
 }
 
 .title2 {
   font-family: var(--font-family-title);
-  font-size: var(--font-size-title-2);
-  line-height: var(--font-line-height-title-2);
+  font-size: 36px;
+  line-height: 44px;
 }
 
 .text1 {
   font-family: var(--font-family-title);
-  font-size: var(--font-size-text-1);
-  line-height: var(--font-line-height-text-1);
+  font-size: 18px;
+  line-height: 28px;
 }
 
 .text2 {
   font-family: var(--font-family-title);
-  font-size: var(--font-size-text-2);
-  line-height: var(--font-line-height-text-2);
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .text3 {
   font-family: var(--font-family-title);
-  font-size: var(--font-size-text-3);
-  line-height: var(--font-line-height-text-3);
+  font-size: 14px;
+  line-height: 20px;
 }
 
 /* Text font-weight */
 .regular {
-  font-weight: var(--font-weight-regular);
+  font-weight: 400px;
 }
 
 .medium {
-  font-weight: var(--font-weight-medium);
+  font-weight: 500px;
 }
 
 .semibold {
-  font-weight: var(--font-weight-semibold);
+  font-weight: 600px;
 }
 
 /* Text colors */

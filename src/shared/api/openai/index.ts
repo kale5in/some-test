@@ -1,6 +1,6 @@
 import { client } from "./client";
 
-const createMail = async ({
+const generateApplication = async ({
   role,
   company,
   skills,
@@ -48,7 +48,7 @@ const createMail = async ({
 };
 
 const openaiApi = {
-  createMail,
+  generateApplication,
 };
 
 export { openaiApi };

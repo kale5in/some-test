@@ -11,23 +11,11 @@
   text-decoration: none;
 
   background: transparent;
-
-  /* Button colors  */
-  --outline-text-button-color: var(--color-slate);
-  --outline-border-button-color: var(--color-silver);
-
-  --filled-text-button-color: var(--color-white);
-  --filled-bg-button-color: var(--color-emerald);
-
-  --default-text-button-color: var(--color-deep-gray);
-
-  --disable-text-button-color: var(--color-slate-light);
-  --disable-bg-button-color: var(--color-silver);
 }
 
 .root[disabled] {
-  background-color: var(--disable-bg-button-color);
-  color: var(--disable-text-button-color);
+  background-color: var(--color-silver);
+  color: var(--color-slate-light);
   cursor: not-allowed;
 }
 
@@ -46,17 +34,17 @@
 }
 
 .filled {
-  background-color: var(--filled-bg-button-color);
-  color: var(--filled-text-button-color);
+  background-color: var(--color-emerald);
+  color: var(--color-white);
 }
 
 .outlined {
-  color: var(--outline-text-button-color);
-  border: 1px solid var(--outline-border-button-color);
+  color: var(--color-slate);
+  border: 1px solid var(--color-silver);
 }
 
 .default {
-  color: var(--default-text-button-color);
+  color: var(--color-deep-gray);
   padding: 0;
 }
 

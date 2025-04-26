@@ -1,6 +1,6 @@
 enum RoutePaths {
   HOME = "/some-test",
-  MAIL_CREATE = "/some-test/mail/create",
+  APPLICATIONS_GENERATE = "/some-test/applications/generate",
 }
 
 export { RoutePaths };

@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
-import { Dashboard as DashboardPage } from "@/pages/mails/Dashboard/Dashboard";
-import { Create as CreatePage } from "@/pages/mails/Create/Create";
+import { Dashboard as DashboardPage } from "@/pages/applications/Dashboard/Dashboard";
+import { GeneratePage } from "@/pages/applications/Generate/Generate";
 import { RoutePaths } from "@/shared/configs/routesPath";
 import { MainLayout } from "@/app/layouts/Default/Main";
 
@@ -10,7 +10,7 @@ const AppRouter = createBrowserRouter([
     Component: MainLayout,
     children: [
       { index: true, Component: DashboardPage },
-      { path: RoutePaths.MAIL_CREATE, Component: CreatePage },
+      { path: RoutePaths.APPLICATIONS_GENERATE, Component: GeneratePage },
     ],
   },
 ]);

@@ -13,9 +13,9 @@ import styles from "./Dashboard.module.css";
 import { copyToClipboard, showTemporaryImage } from "@/shared/lib";
 
 const Dashboard = () => {
-  const mails = useStore((state) => state.mails);
+  const applications = useStore((state) => state.applications);
 
-  const removeMail = useStore((state) => state.removeMail);
+  const removeMail = useStore((state) => state.removeApplication);
 
   const handleCopyToClipboard = (data: string) => () => {
     copyToClipboard(data).then(() => {
@@ -35,7 +35,7 @@ const Dashboard = () => {
         </Typography>
         <Button
           as={Link}
-          to={RoutePaths.MAIL_CREATE}
+          to={RoutePaths.APPLICATIONS_GENERATE}
           variant="filled"
           size="small"
           start={<PlusSvg />}
@@ -44,9 +44,9 @@ const Dashboard = () => {
           Create New
         </Button>
       </div>
-      {mails.length > 0 && (
+      {applications.length > 0 && (
         <div className={styles.container}>
-          {mails.map((mail) => (
+          {applications.map((mail) => (
             <Card
               key={mail.id}
               text={mail.text}
