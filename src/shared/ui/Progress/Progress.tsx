@@ -6,7 +6,7 @@ import styles from "./Progress.module.css";
 type Props = {
   total: number;
   current: number;
-  label: string;
+  label: React.ReactNode;
   className?: string;
   rootOrientation?: "vertical" | "horizontal";
   indicator?: "line" | "dot";

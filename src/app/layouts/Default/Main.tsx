@@ -32,7 +32,12 @@ const Main = () => {
           </Link>
           <Progress
             className={styles.progress}
-            label={`${currentMailsCount}/5 applications generated`}
+            label={
+              <>
+                <span>{`${currentMailsCount}/5 `}</span>
+                <span>applications generated</span>
+              </>
+            }
             current={currentMailsCount}
             total={MAX_MAIL_CREATED_FOR_GOAL}
           />
