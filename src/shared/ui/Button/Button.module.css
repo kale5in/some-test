@@ -1,0 +1,81 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-s);
+  border: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+  text-decoration: none;
+
+  background: transparent;
+
+  /* Button colors  */
+  --outline-text-button-color: var(--color-slate);
+  --outline-border-button-color: var(--color-silver);
+
+  --filled-text-button-color: var(--color-white);
+  --filled-bg-button-color: var(--color-emerald);
+
+  --default-text-button-color: var(--color-deep-gray);
+
+  --disable-text-button-color: var(--color-slate-light);
+  --disable-bg-button-color: var(--color-silver);
+}
+
+.root[disabled] {
+  background-color: var(--disable-bg-button-color);
+  color: var(--disable-text-button-color);
+  cursor: not-allowed;
+}
+
+/* Adds simple interactive feedback for hover and active states */
+.root:not([disabled]):hover {
+  opacity: 0.8;
+}
+
+.root:focus {
+  opacity: 0.8;
+  outline: none;
+}
+
+.root:not([disabled]):active {
+  opacity: 0.65;
+}
+
+.filled {
+  background-color: var(--filled-bg-button-color);
+  color: var(--filled-text-button-color);
+}
+
+.outlined {
+  color: var(--outline-text-button-color);
+  border: 1px solid var(--outline-border-button-color);
+}
+
+.default {
+  color: var(--default-text-button-color);
+  padding: 0;
+}
+
+.medium {
+  padding-block: 16px;
+  padding-inline: 28px;
+  gap: 12px;
+}
+
+.medium:has(> *:only-child) {
+  padding-inline: 16px;
+}
+
+.small {
+  padding-inline: 18px;
+  padding-block: 10px;
+  gap: 8px;
+}
+
+.small:has(> *:only-child) {
+  padding-inline: 10px;
+}

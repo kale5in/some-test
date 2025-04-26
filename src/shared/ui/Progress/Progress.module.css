@@ -1,0 +1,56 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@container header (max-width: 550px) {
+  .label {
+    display: none;
+  }
+}
+
+.horizontal {
+  gap: 16px;
+}
+
+.vertical {
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+
+.indicators {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicators:has(.line) {
+  gap: 8px;
+}
+
+.indicators:has(.dot) {
+  gap: 4px;
+}
+
+.indicator {
+  height: 8px;
+  opacity: 0.24;
+  background-color: var(--color-charcoal);
+  transition: opacity 0.3s ease;
+}
+
+.indicator.active {
+  opacity: 1;
+}
+
+.dot {
+  width: 8px;
+  border-radius: 50%;
+}
+
+.line {
+  width: 32px;
+  border-radius: 4px;
+}

@@ -1,0 +1,51 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+
+  --field-placeholder-color: var(--color-steel);
+
+  --field-default-border-color: var(--color-silver);
+  --field-default-shadow-color: color-mix(
+    in srgb,
+    var(--color-charcoal),
+    transparent 95%
+  );
+
+  --field-focus-border-color: var(--color-success);
+  --field-focus-shadow-color: var(--color-success-light);
+
+  --field-error-border-color: var(--color-error-medium);
+  --field-error-shadow-color: var(--color-error-light);
+
+  --field-border-radius: var(--border-radius-s);
+  --field-padding-inline: 16px;
+  --field-padding-block: 8px;
+}
+
+.root input,
+.root textarea {
+  padding-inline: var(--field-padding-inline);
+  padding-block: var(--field-padding-block);
+  border: 1px solid var(--field-default-border-color);
+  border-radius: var(--field-border-radius);
+  box-shadow: 0px 1px 2px 0px var(--field-default-shadow-color);
+  outline: none;
+}
+
+.root input:focus,
+.root textarea:focus {
+  border: 1px solid var(--field-focus-border-color);
+  box-shadow: 0px 0px 0px 4px var(--field-focus-shadow-color);
+}
+
+.root input[aria-invalid="true"],
+.root textarea[aria-invalid="true"] {
+  border: 1px solid var(--field-error-border-color);
+  box-shadow: 0px 0px 0px 4px var(--field-error-shadow-color);
+}
+
+.input::placeholder {
+  color: var(--field-placeholder-color);
+}

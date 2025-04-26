@@ -1,0 +1,19 @@
+.root {
+  width: 100%;
+  background-color: var(--color-mint-light);
+  padding-block: 54px;
+  border-radius: var(--border-radius-m);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  max-width: 480px;
+  margin: auto;
+}
+
+.bottom {
+  margin-top: 32px;
+}
