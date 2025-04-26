@@ -4,4 +4,8 @@
 
   --shadow-s: 0px 1px 2px 0px;
   --shadow-m: 0px 0px 0px 4px;
+
+  --gap-padding-s: 6px;
+  --gap-padding-m: 16px;
+  --gap-padding-l: 24px;
 }

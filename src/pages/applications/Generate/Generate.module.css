@@ -12,7 +12,7 @@
   .container {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--gap-padding-s);
   }
 }
 
@@ -21,7 +21,7 @@
   container-name: fieldset;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--gap-padding-m);
 }
 
 .formTitle {
@@ -31,12 +31,12 @@
 
 .rowFields {
   display: flex;
-  gap: 16px;
+  gap: var(--gap-padding-m);
 }
 
 @container fieldset (max-width: 500px) {
   .rowFields {
     flex-direction: column;
-    gap: 8px;
+    gap: var(--gap-padding-s);
   }
 }

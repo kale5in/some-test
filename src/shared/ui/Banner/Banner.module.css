@@ -8,7 +8,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--gap-padding-m);
   align-items: center;
   max-width: 480px;
   margin: auto;

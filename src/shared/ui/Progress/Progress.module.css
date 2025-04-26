@@ -11,7 +11,7 @@
 }
 
 .horizontal {
-  gap: 16px;
+  gap: var(--gap-padding-m);
 }
 
 .vertical {

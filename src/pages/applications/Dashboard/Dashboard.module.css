@@ -13,7 +13,7 @@
 @container (max-width: 500px) {
   .title {
     flex-direction: column;
-    gap: 8px;
+    gap: var(--gap-padding-s);
   }
   .button {
     width: 80%;
@@ -23,7 +23,7 @@
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px 16px;
+  gap: var(--gap-padding-l) var(--gap-padding-m);
   margin-top: 24px;
 }
 
@@ -31,6 +31,6 @@
   .container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--gap-padding-m);
   }
 }

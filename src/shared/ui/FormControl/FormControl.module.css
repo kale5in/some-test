@@ -1,7 +1,7 @@
 .root {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--gap-padding-s);
   flex: 1;
 
   --field-default-shadow-color: color-mix(
