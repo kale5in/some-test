@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "FixelDisplay";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("FixelDisplay"),
+    url("/fonts/webfonts/FixelDisplay-Regular.woff2") format("woff2"),
+    url("/fonts/ttf/FixelDisplay-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FixelDisplay";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("FixelDisplay"),
+    url("/fonts/webfonts/FixelDisplay-Medium.woff2") format("woff2"),
+    url("/fonts/ttf/FixelDisplay-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FixelDisplay";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("FixelDisplay"),
+    url("/fonts/webfonts/FixelDisplay-SemiBold.woff2") format("woff2"),
+    url("/fonts/ttf/FixelDisplay-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FixelText";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("FixelText"),
+    url("/fonts/webfonts/FixelText-Regular.woff2") format("woff2"),
+    url("/fonts/ttf/FixelText-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FixelText";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("FixelText"),
+    url("/fonts/webfonts/FixelText-Medium.woff2") format("woff2"),
+    url("/fonts/ttf/FixelText-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FixelText";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("FixelText"),
+    url("/fonts/webfonts/FixelText-SemiBold.woff2") format("woff2"),
+    url("/fonts/ttf/FixelText-SemiBold.ttf") format("truetype");
+}
+
+:root {
+  --font-family-title: FixelDisplay, -apple-system, Roboto, Helvetica, Arial,
+    sans-serif;
+  --font-family-body: FixelText, -apple-system, Roboto, Helvetica, Arial,
+    sans-serif;
+}

@@ -1,0 +1,29 @@
+:root {
+  /* Green shades */
+  --color-emerald: #087443; /* Rich green/emerald */
+  --color-mint-light: #edfcf2; /* Light mint */
+  --color-success: #73e2a3; /* Success green */
+  --color-success-light: #d3f8df; /* Light success green */
+
+  /* Red shades */
+  --color-error: #f04438; /* Error red */
+  --color-error-medium: #fda29b; /* Medium error red */
+  --color-error-light: #fee4e2; /* Light error red */
+
+  /* Dark shades */
+  --color-charcoal: #101828; /* Coal black */
+  --color-slate: #344054; /* Dark slate */
+  --color-deep-gray: #475467; /* Deep gray */
+
+  /* Medium gray shades */
+  --color-steel: #667085; /* Steel gray */
+  --color-slate-light: #98a2b3; /* Light slate */
+
+  /* Light shades */
+  --color-silver: #d0d5dd; /* Silver */
+  --color-ghost: #eaecf0; /* Ghost gray */
+
+  /* --color-cloud: rgb(242, 244, 247); Cloud */
+  --color-cloud: #f2f4f7; /* Cloud */
+  --color-white: #ffffff; /* White */
+}
