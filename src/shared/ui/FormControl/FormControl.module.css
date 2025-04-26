@@ -30,20 +30,20 @@
   padding-block: var(--field-padding-block);
   border: 1px solid var(--field-default-border-color);
   border-radius: var(--field-border-radius);
-  box-shadow: 0px 1px 2px 0px var(--field-default-shadow-color);
+  box-shadow: var(--shadow-s) var(--field-default-shadow-color);
   outline: none;
 }
 
 .root input:focus,
 .root textarea:focus {
   border: 1px solid var(--field-focus-border-color);
-  box-shadow: 0px 0px 0px 4px var(--field-focus-shadow-color);
+  box-shadow: var(--shadow-m) var(--field-focus-shadow-color);
 }
 
 .root input[aria-invalid="true"],
 .root textarea[aria-invalid="true"] {
   border: 1px solid var(--field-error-border-color);
-  box-shadow: 0px 0px 0px 4px var(--field-error-shadow-color);
+  box-shadow: var(--shadow-m) var(--field-error-shadow-color);
 }
 
 .input::placeholder {
