@@ -15,7 +15,7 @@ import { copyToClipboard, showTemporaryImage } from "@/shared/lib";
 const Dashboard = () => {
   const applications = useStore((state) => state.applications);
 
-  const removeMail = useStore((state) => state.removeApplication);
+  const removeApplication = useStore((state) => state.removeApplication);
 
   const handleCopyToClipboard = (data: string) => () => {
     copyToClipboard(data).then(() => {
@@ -24,7 +24,7 @@ const Dashboard = () => {
   };
 
   const handleDelete = (id: string) => () => {
-    removeMail(id);
+    removeApplication(id);
   };
 
   return (
@@ -46,14 +46,14 @@ const Dashboard = () => {
       </div>
       {applications.length > 0 && (
         <div className={styles.container}>
-          {applications.map((mail) => (
+          {applications.map((application) => (
             <Card
-              key={mail.id}
-              text={mail.text}
+              key={application.id}
+              text={application.text}
               actions={{
                 start: (
                   <Button
-                    onClick={handleDelete(mail.id)}
+                    onClick={handleDelete(application.id)}
                     size="small"
                     variant="default"
                     start={<TrashSvg />}
@@ -63,7 +63,7 @@ const Dashboard = () => {
                 ),
                 end: (
                   <Button
-                    onClick={handleCopyToClipboard(mail.text)}
+                    onClick={handleCopyToClipboard(application.text)}
                     size="small"
                     variant="default"
                     end={<CopySvg />}

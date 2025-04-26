@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router";
 import { Dashboard as DashboardPage } from "@/pages/applications/Dashboard/Dashboard";
 import { GeneratePage } from "@/pages/applications/Generate/Generate";
 import { RoutePaths } from "@/shared/configs/routesPath";
-import { MainLayout } from "@/app/layouts/Default/Main";
+import { MainLayout } from "@/app/layouts/Main/Main";
 
 const AppRouter = createBrowserRouter([
   {
